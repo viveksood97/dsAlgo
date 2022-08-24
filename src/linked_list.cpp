@@ -19,6 +19,13 @@ void insertAtFront(Node*& head, int value) {
     new_node->next = head;
     head = new_node;
 }
+
+void insertAtBack(Node* head, int value) {
+    Node* new_node = new Node(value);
+    while(head->next != NULL) head = head->next;
+    head->next = new_node;
+
+}
 int main() {
     Node* first = new Node(10);
     Node* second = new Node(20);
@@ -28,6 +35,8 @@ int main() {
     second->next = third;
 
     insertAtFront(first, 5);
+
+    insertAtBack(first, 40);
 
     printLinkedList(first);
 }
