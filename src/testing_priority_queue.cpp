@@ -40,19 +40,14 @@ int main() {
     std::priority_queue<int, std::vector<int>, std::greater<int>> pq1 = push_values_greater(test_case); 
 
     auto custom_compare = [](int a, int b){return a < b;};
+    std::priority_queue<int, std::vector<int>, decltype(custom_compare)> pq2(test_case.begin(), test_case.end(), custom_compare);
 
 
-    std::priority_queue<int, std::vector<int>, decltype(custom_compare)> pq2(custom_compare);
 
-    pq2.push(100);
-    pq2.push(32);
-    pq2.push(21);
-    pq2.push(11);
+    
 
 
-    print_values(pq);
 
-    print_values(pq1);
 
     print_values(pq2);
     // std::priority_queue<int, std::vector<int>, std::greater<int>> ascending;
